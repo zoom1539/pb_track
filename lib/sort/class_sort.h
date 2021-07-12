@@ -3,13 +3,22 @@
 // std
 #include <opencv2/opencv.hpp>
 #include "class_tracker.h"
-#include "class_sort.h"
+#include "Hungarian.h"
+#include "KalmanTracker.h"
 
-class _Tracker
+typedef struct TrackingBox
+{
+	int frame;
+	int id;
+	Rect_<float> box;
+}TrackingBox;
+
+
+class Sort
 {
 public:
-    _Tracker();
-    ~_Tracker();
+    Sort();
+    ~Sort();
 
 public:
     // sort
@@ -18,6 +27,7 @@ public:
     
 
 private:
-    Sort _sort;
+    int _frame_count;
+	std::vector<KalmanTracker> _trackers;
 
 };

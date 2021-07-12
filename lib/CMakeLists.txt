@@ -7,12 +7,17 @@ find_package(OpenCV 3.4.8 REQUIRED PATHS ~/PLATFORM/3rdparty/opencv348)
 
 
 #
-aux_source_directory(. LIB_SRC)
+# aux_source_directory(. LIB_SRC)
+# message(${LIB_SRC})
+FILE (GLOB_RECURSE  LIB_SRC "*.cpp" "*.c")
 message(${LIB_SRC})
+
 add_library(tracker SHARED ${LIB_SRC} )
 
 target_include_directories(tracker 
-            PUBLIC ${OpenCV_INCLUDE_DIRS})
+            PUBLIC ${OpenCV_INCLUDE_DIRS}
+            PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/sort
+            PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries(tracker ${OpenCV_LIBS})
 
