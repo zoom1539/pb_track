@@ -23,3 +23,9 @@ bool Tracker::run(const std::vector<cv::Rect> &rects_,
     return _impl->_tracker.run(rects_, rects_tracked_);
 }
 
+bool Tracker::run(const std::vector<cv::Rect> &rects_, 
+             const std::vector<cv::Mat> &features_,
+             std::vector<TrackedBox> &rects_tracked_)
+{
+    return _impl->_tracker.run(rects_, features_, rects_tracked_);
+}

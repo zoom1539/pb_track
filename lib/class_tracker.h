@@ -14,8 +14,15 @@ public:
     explicit Tracker();
     ~Tracker();
 
+    // sort
     bool run(const std::vector<cv::Rect> &rects_, 
              std::vector<TrackedBox> &rects_tracked_);
+
+    // deep sort
+    bool run(const std::vector<cv::Rect> &rects_, 
+             const std::vector<cv::Mat> &features_,
+             std::vector<TrackedBox> &rects_tracked_);
+    
     
 
 private:
