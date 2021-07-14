@@ -1,7 +1,7 @@
 #include "tracking/kalmanfilter.h"
 #include <Eigen/Cholesky>
 
-const double MyKalmanFilter::chi2inv95[10] = {
+const double MyKalmanFilter::chi2inv95[20] = {
     0,
     3.8415,
     5.9915,
@@ -11,7 +11,17 @@ const double MyKalmanFilter::chi2inv95[10] = {
     12.592,
     14.067,
     15.507,
-    16.919
+    16.919,
+    18.307,
+    31.410,
+    43.773,
+    55.758,
+    67.505,
+    79.082,
+    90.531,
+    101.879,
+    113.145,
+    124.342
 };
 MyKalmanFilter::MyKalmanFilter()
 {

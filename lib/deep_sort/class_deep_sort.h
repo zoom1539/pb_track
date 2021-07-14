@@ -6,7 +6,7 @@
 #include "tracking/tracker.h"
 #include "dataType.h"
 
-
+// IMPORTANT: change Mahalanobis_threshold in linear_assignment.cpp for different applications
 class DeepSort
 {
 public:

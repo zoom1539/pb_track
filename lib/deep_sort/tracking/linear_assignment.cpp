@@ -1,6 +1,10 @@
 #include "tracking/linear_assignment.h"
 #include "matching/hungarianoper.h"
 
+// the more severely the position changes, the bigger Mahalanobis_threshold is
+// default: 4(0-19)
+static int Mahalanobis_threshold = 4;
+
 linear_assignment *linear_assignment::instance = NULL;
 linear_assignment::linear_assignment()
 {
@@ -147,7 +151,7 @@ linear_assignment::gate_cost_matrix(
         const std::vector<int> &detection_indices,
         float gated_cost, bool only_position)
 {
-    int gating_dim = (only_position == true?2:4);
+    int gating_dim = (only_position == true?2:Mahalanobis_threshold);
     double gating_threshold = MyKalmanFilter::chi2inv95[gating_dim];
     std::vector<DETECTBOX> measurements;
     for(int i:detection_indices) {
@@ -160,6 +164,7 @@ linear_assignment::gate_cost_matrix(
                     track.mean, track.covariance, measurements, only_position);
         for (int j = 0; j < gating_distance.cols(); j++) {
             if (gating_distance(0, j) > gating_threshold)  cost_matrix(i, j) = gated_cost;
+            // if (cost_matrix(i, j) > 0.03)  cost_matrix(i, j) = gated_cost;
         }
     }
     return cost_matrix;

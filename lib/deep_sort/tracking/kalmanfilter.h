@@ -6,7 +6,7 @@
 class MyKalmanFilter
 {
 public:
-    static const double chi2inv95[10];
+    static const double chi2inv95[20];
     MyKalmanFilter();
     KAL_DATA initiate(const DETECTBOX& measurement);
     void predict(KAL_MEAN& mean, KAL_COVA& covariance);
