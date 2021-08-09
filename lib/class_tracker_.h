@@ -14,7 +14,8 @@ public:
 
 public:
     // sort
-    bool run(const std::vector<cv::Rect> &rects_, 
+    bool run(const std::vector<cv::Rect> &rects_,
+            const cv::Size &img_size_, //(width, height) 
              std::vector<TrackedBox> &rects_tracked_);
     
     // deep sort

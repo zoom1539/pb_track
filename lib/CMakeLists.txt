@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0.0)
 
 # OpenCV
-find_package(OpenCV 3.4.8 REQUIRED PATHS /root/PLATFORM/3rdparty/opencv348)
+find_package(OpenCV 3.4.15 REQUIRED PATHS /root/PLATFORM/3rdparty/opencv3415)
 # find_package(OpenCV REQUIRED)
 
 # boost

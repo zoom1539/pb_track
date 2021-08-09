@@ -27,7 +27,8 @@ Sort::~Sort()
 }
 
 bool Sort::run(const std::vector<cv::Rect> &rects_, 
-             std::vector<TrackedBox> &rects_tracked_)
+			   const cv::Size &img_size_, //(width, height)
+               std::vector<TrackedBox> &rects_tracked_)
 {
 	//
 	if (_frame_count < 100)
@@ -76,7 +77,8 @@ bool Sort::run(const std::vector<cv::Rect> &rects_,
 	for (auto it = _trackers.begin(); it != _trackers.end();)
 	{
 		Rect_<float> pBox = (*it).predict();
-		if (pBox.x >= 0 && pBox.y >= 0)
+		if (   pBox.x < img_size_.width && pBox.x >= 0 
+		    && pBox.y < img_size_.height && pBox.y >= 0)
 		{
 			predictedBoxes.push_back(pBox);
 			it++;

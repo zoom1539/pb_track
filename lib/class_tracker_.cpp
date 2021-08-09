@@ -8,10 +8,11 @@ _Tracker::~_Tracker()
    
 }
 
-bool _Tracker::run(const std::vector<cv::Rect> &rects_, 
-             std::vector<TrackedBox> &rects_tracked_)
+bool _Tracker::run(const std::vector<cv::Rect> &rects_,
+                   const cv::Size &img_size_, //(width, height) 
+                   std::vector<TrackedBox> &rects_tracked_)
 {
-	return _sort.run(rects_, rects_tracked_);
+	return _sort.run(rects_, img_size_, rects_tracked_);
 }
 
 bool _Tracker::run(const std::vector<cv::Rect> &rects_, 

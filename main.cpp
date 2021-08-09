@@ -15,7 +15,8 @@ int main()
 		}
 		
 		std::vector<TrackedBox> rects_tracked;
-		bool is_track = tracker.run(rects, rects_tracked);
+		cv::Size img_size(1024, 760); //(width, height) 
+		bool is_track = tracker.run(rects, img_size, rects_tracked);
 		for (int i = 0; i < rects_tracked.size(); i++)
 		{
 			std::cout << rects_tracked[i].id << "," << rects_tracked[i].rect << std::endl;
@@ -35,7 +36,8 @@ int main()
 		}
 		
 		std::vector<TrackedBox> rects_tracked;
-		bool is_track = tracker.run(rects, rects_tracked);
+		cv::Size img_size(1024, 760); //(width, height) 
+		bool is_track = tracker.run(rects, img_size, rects_tracked);
 		for (int i = 0; i < rects_tracked.size(); i++)
 		{
 			std::cout << rects_tracked[i].id << "," << rects_tracked[i].rect << std::endl;
@@ -55,7 +57,8 @@ int main()
 		}
 		
 		std::vector<TrackedBox> rects_tracked;
-		bool is_track = tracker.run(rects, rects_tracked);
+		cv::Size img_size(1024, 760); //(width, height) 
+		bool is_track = tracker.run(rects, img_size, rects_tracked);
 		for (int i = 0; i < rects_tracked.size(); i++)
 		{
 			std::cout << rects_tracked[i].id << "," << rects_tracked[i].rect << std::endl;
@@ -79,7 +82,8 @@ int main()
 		}
 		
 		std::vector<TrackedBox> rects_tracked;
-		bool is_track = tracker.run(rects, rects_tracked);
+		cv::Size img_size(1024, 760); //(width, height) 
+		bool is_track = tracker.run(rects, img_size, rects_tracked);
 		for (int i = 0; i < rects_tracked.size(); i++)
 		{
 			std::cout << rects_tracked[i].id << "," << rects_tracked[i].rect << std::endl;
@@ -103,7 +107,8 @@ int main()
 		}
 		
 		std::vector<TrackedBox> rects_tracked;
-		bool is_track = tracker.run(rects, rects_tracked);
+		cv::Size img_size(1024, 760); //(width, height) 
+		bool is_track = tracker.run(rects, img_size, rects_tracked);
 		for (int i = 0; i < rects_tracked.size(); i++)
 		{
 			std::cout << rects_tracked[i].id << "," << rects_tracked[i].rect << std::endl;
@@ -126,7 +131,8 @@ int main()
 		}
 		
 		std::vector<TrackedBox> rects_tracked;
-		bool is_track = tracker.run(rects, rects_tracked);
+		cv::Size img_size(1024, 760); //(width, height) 
+		bool is_track = tracker.run(rects, img_size, rects_tracked);
 		for (int i = 0; i < rects_tracked.size(); i++)
 		{
 			std::cout << rects_tracked[i].id << "," << rects_tracked[i].rect << std::endl;
@@ -150,7 +156,8 @@ int main()
 		}
 		
 		std::vector<TrackedBox> rects_tracked;
-		bool is_track = tracker.run(rects, rects_tracked);
+		cv::Size img_size(1024, 760); //(width, height) 
+		bool is_track = tracker.run(rects, img_size, rects_tracked);
 		for (int i = 0; i < rects_tracked.size(); i++)
 		{
 			std::cout << rects_tracked[i].id << "," << rects_tracked[i].rect << std::endl;
